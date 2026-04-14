@@ -15,10 +15,12 @@ return {
             },
         },
         choose_target = function(targets)
-            -- Auto-select IbiunaBackend.sln if present
-            for _, target in ipairs(targets) do
-                if target:find("IbiunaBackend.sln") then
-                    return target
+            local preferred = { "IbiunaBackend.sln", "BotoBackend.sln" }
+            for _, name in ipairs(preferred) do
+                for _, target in ipairs(targets) do
+                    if target:find(name, 1, true) then
+                        return target
+                    end
                 end
             end
             return targets[1]
