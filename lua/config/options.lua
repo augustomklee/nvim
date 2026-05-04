@@ -115,7 +115,9 @@ opt.updatetime = 200 -- Save swap file and trigger CursorHold
 opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
 opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
-opt.wrap = false -- Disable line wrap
+opt.wrap = true -- Wrap long lines visually
+opt.textwidth = 100 -- Hard wrap column limit
+opt.colorcolumn = "100" -- Visible ruler at column 100
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
